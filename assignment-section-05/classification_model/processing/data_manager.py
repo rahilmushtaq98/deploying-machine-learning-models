@@ -89,7 +89,8 @@ def load_pipeline(*, file_name: str) -> Pipeline:
     """Load a persisted pipeline."""
 
     file_path = TRAINED_MODEL_DIR / file_name
-    return joblib.load(filename=file_path)
+    trained_model = joblib.load(filename=file_path)
+    return trained_model
 
 
 def remove_old_pipelines(*, files_to_keep: List[str]) -> None:
